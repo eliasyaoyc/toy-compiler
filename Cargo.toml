@@ -1,0 +1,12 @@
+[workspace]
+members = [
+    "at",
+    "tcc",
+    "saga",
+    "server"
+]
+
+[profile.dev]
+debug = false
+[profile.test]
+debug = false
