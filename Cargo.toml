@@ -1,12 +1,5 @@
-[workspace]
-members = [
-    "at",
-    "tcc",
-    "saga",
-    "server"
-]
-
-[profile.dev]
-debug = false
-[profile.test]
-debug = false
+[package]
+name = "signal"
+version = "0.1.0"
+authors = ["Elias.Yao <siran0611@gmail.com>"]
+edition = "2018"
