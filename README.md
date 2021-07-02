@@ -11,4 +11,4 @@ Interview is a programmer's secret include algorithms、architecture design、un
 * [Redis](Redis.md)
 * [分布式](分布式.md)
 * [场景设计](场景设计.md)
-* [算法](https://labuladong.gitee.io/algo/)
+* [算法](算法.md)
