@@ -6,3 +6,7 @@ mod construct_before_mid_binary_tree;
 mod construct_mid_after_binary_tree;
 mod kth_smallest;
 mod convert_bst;
+mod search_bst;
+mod is_valid_bst;
+mod delete_bst_node;
+mod insert_node_into_bst;
