@@ -1,7 +1,7 @@
 //! 450. 删除二叉树中的节点
 use std::rc::Rc;
 use std::cell::{RefCell, Ref};
-use core::unicode::N;
+use std::cmp::Ordering;
 
 #[derive(Debug, Eq, PartialEq)]
 pub struct TreeNode {
@@ -24,6 +24,28 @@ struct Solution {}
 
 impl Solution {
     pub fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        // public TreeNode deleteNode(TreeNode root, int key) {
+        //     if (root == null)
+        //     return null;
+        //
+        //     if(root.val < key) {
+        //         root.right = deleteNode(root.right,key);
+        //         return root;
+        //     } else if(root.val > key){
+        //         root.left = deleteNode(root.left,key);
+        //         return root;
+        //     } else {
+        //         if (root.left == null) return root.right;
+        //         if (root.right == null) return root.left;
+        //         TreeNode left = root.left;
+        //         TreeNode right = root.right;
+        //         while (right.left != null) {
+        //             right = right.left;
+        //         }
+        //         right.left = left;
+        //         return root.right;
+        //     }
+        // }
         None
     }
 }

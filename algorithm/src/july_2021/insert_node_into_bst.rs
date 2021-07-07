@@ -24,21 +24,14 @@ struct Solution {}
 
 impl Solution {
     pub fn insert_into_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some(r) = root.as_ref() {
-            let mut m_root = r.borrow_mut();
-            if m_root.val < val {
-                m_root.right = Solution::insert_into_bst(m_root.right.take(), val);
-            }
-            if m_root.val > val {
-                m_root.left = Solution::insert_into_bst(m_root.left.take(), val);
-            }
+        if let Some(r) = &root{{
+            let mut root = r.borrow_mut();
+            if val < root.val {
+                root.left=Self::insert_into_bst(root.left.take(),val)
+            } else {
+                root.right=Self::insert_into_bst(root.right.take(),val)
+            }}
             root
-        } else {
-            Some(Rc::new(RefCell::new(TreeNode {
-                val,
-                left: None,
-                right: None,
-            })))
-        }
+        }else{Some(Rc::new(RefCell::new(TreeNode {left:None,right:None,val: val})))}
     }
 }

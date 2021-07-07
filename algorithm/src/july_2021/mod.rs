@@ -10,3 +10,5 @@ mod search_bst;
 mod is_valid_bst;
 mod delete_bst_node;
 mod insert_node_into_bst;
+mod generate_trees;
+mod num_trees;
