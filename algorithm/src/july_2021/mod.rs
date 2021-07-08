@@ -12,3 +12,5 @@ mod delete_bst_node;
 mod insert_node_into_bst;
 mod generate_trees;
 mod num_trees;
+mod _797_all_paths_from_source_to_target;
+mod _1373_max_sum_bst;
