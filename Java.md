@@ -197,7 +197,43 @@ worker 具有独占锁的语义，每一个worker 只能执行一个任务，每
 定时线程池的执行流程：
 1.
 
-----
+下面这串线程池的代码会输出什么
+```java
+    public static void main(String[] args) {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(
+                1,
+                2,
+                4,
+                TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(1));
+        executor.execute(()-> {
+            while (true){
+                System.out.println(1);
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        executor.execute(()-> {
+            while (true){
+                System.out.println(2);
+                try {
+
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+```
+> 会无限循环输出 1，因为 2 这个task 会被塞入queue 中，但是没有第三个task 加入故不会在创建线程，所以当前只有一个线程在运行
+> 所以会无限的运行 1
+
+---- 
 
 关于 AQS
 什么是：abstractQueuedSynchronizer 是一个抽象的同步器，它有很多实现类，比如 CountdownLatch计数器(不可重用)、信号量(用于限流)、rentreentlock
